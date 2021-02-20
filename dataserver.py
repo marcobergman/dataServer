@@ -9,10 +9,16 @@ import threading
 
 ##
  # Data Server
- # Listen to a web socket for {"name": "value"} pairs
- # Distribute this data in signalk format to all attached clients
+ # Copyright (C) 2021 Marco Bergman <marcobergman@gmail.com>
  #
- ##
+ # This Program is free software; you can redistribute it and/or
+ # modify it under the terms of the GNU General Public
+ # License as published by the Free Software Foundation; either
+ # version 3 of the License, or (at your option) any later version.  
+ #
+ ###  Listen to a web socket for {"name": "value"} pairs
+ ###  Distribute this data in signalk format to all attached clients
+ ###
 
 server_host=socket.gethostbyname(socket.gethostname())
 #server_host="192.168.178.30"
@@ -28,7 +34,7 @@ class dataServer (object):
             message = json.dumps({
                         "context": "my-boat",
                         "updates": [{
-                            "$source": "sailing-pd",
+                            "$source": "my-app",
                             "timestamp": datetime.datetime.now().isoformat(),
                             "values": [{
                                 "path": path,
