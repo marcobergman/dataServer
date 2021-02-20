@@ -7,12 +7,12 @@ import websockets
 import datetime
 import threading
 
-/*
- * Data Server
- * Listen to a web socket for {"name": "value"} pairs
- * Distribute this data in signalk format to all attached clients
- *
- */
+##
+ # Data Server
+ # Listen to a web socket for {"name": "value"} pairs
+ # Distribute this data in signalk format to all attached clients
+ #
+ ##
 
 server_host=socket.gethostbyname(socket.gethostname())
 #server_host="192.168.178.30"
